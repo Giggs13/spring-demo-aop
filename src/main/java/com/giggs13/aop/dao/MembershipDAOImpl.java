@@ -1,8 +1,8 @@
 package com.giggs13.aop.dao;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class MembershipDAOImpl
         implements MembershipDAO {
 
@@ -11,5 +11,10 @@ public class MembershipDAOImpl
         System.out.println(getClass() + ": DOING STUFF: ADDING A MEMBERSHIP ACCOUNT");
 
         return true;
+    }
+
+    @Override
+    public void goToSleep() {
+        System.out.println(getClass() + ": I'M GOING TO SLEEP...");
     }
 }

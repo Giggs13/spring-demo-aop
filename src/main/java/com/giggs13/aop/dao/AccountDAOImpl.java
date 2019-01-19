@@ -1,13 +1,22 @@
 package com.giggs13.aop.dao;
 
-import org.springframework.stereotype.Component;
+import com.giggs13.aop.Account;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class AccountDAOImpl
         implements AccountDAO {
 
     @Override
-    public void addAccount() {
+    public void addAccount(Account account,
+                           boolean vip) {
         System.out.println(getClass() + ": DOING MY DB WORK: ADDING AN ACCOUNT");
+    }
+
+    @Override
+    public boolean doWork() {
+        System.out.println(getClass() + ": DOING MY WORK");
+
+        return true;
     }
 }
